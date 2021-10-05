@@ -9,19 +9,7 @@ public class Button extends Element{
 		this.labelElement = this.styles(label) + "\r\n" + this.labelComment;
 		
 	}
-
-	@Override
-	public String addElem(String content) { 
-		//buscar el comentario donde pueda agregar este elemento
-		//en este caso se agrega dentro del comentario del body
-		return this.replaceContent(content, this.labelComment, this.labelElement);				
-	}
-
-	@Override
-	public String deleteElem(String content) {	
-		//los comentarios no deberan estar identados para poder borrarlos correctamente 
-		return this.replaceContent(content, this.labelElement, "");		
-	}
+	
 	
 	@Override
 	public String modElem(String content, ElementAtributes enumAt, String newAtr) {

@@ -11,6 +11,10 @@ public abstract class Element {
 	protected String labelElement; 
 	protected String label;
 	
+	public Element(String position) {
+		this.position = position;
+	}
+	
 	public Element(String position, String color) {
 	//constructor para elementos que no contengan texto como lista
 		this.position = position;
@@ -23,8 +27,15 @@ public abstract class Element {
 		this.text = text;
 	}
 	
-	public abstract String addElem(String content);
-	public abstract String deleteElem(String content);
+	public String addElem(String content) {
+		//buscar el comentario donde pueda agregar este elemento
+		//en este caso se agrega dentro del comentario del body
+		return this.replaceContent(content, this.labelComment, this.labelElement);
+	};
+	public String deleteElem(String content) {
+		//los comentarios no deberan estar identados para poder borrarlos correctamente
+		return this.replaceContent(content, this.styles(label), "");
+	};
 	public abstract String modElem(String content,ElementAtributes enumAt, String newAtr);
 	
 	protected void modifyElem(ElementAtributes enumAt, String newAtr) {

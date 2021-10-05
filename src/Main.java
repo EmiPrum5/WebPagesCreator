@@ -1,4 +1,5 @@
 import ar.com.webpages.Button;
+import ar.com.webpages.Header;
 import ar.com.webpages.Hyperlink;
 import ar.com.webpages.Paragraph;
 import ar.com.webpages.WebPage;
@@ -38,7 +39,10 @@ public class Main {
 		wp.addElement(para);
 		
 		wp.addElement(hl);
+		
+		Header h1 = new Header("relative","brown", "Aca siendo un H1", 1);
 	
+		wp.addElement(h1);
 		
 		wp.writeWebPage("firstwebeichitimiel.html");
 

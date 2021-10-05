@@ -24,16 +24,6 @@ public class Hyperlink extends Element{
 	}
 
 	@Override
-	public String addElem(String content) {
-		return this.replaceContent(content, this.labelComment, this.labelElement); 
-	}
-
-	@Override
-	public String deleteElem(String content) {
-		return this.replaceContent(content, this.styles(label), "");
-	}
-
-	@Override
 	public String modElem(String content, ElementAtributes enumAt, String newAtr) {
 		String elemNoMod = this.styles(label) + "\r\n" + this.labelComment;		
 		

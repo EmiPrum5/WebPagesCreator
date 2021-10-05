@@ -9,15 +9,6 @@ public class Paragraph extends Element{
 		this.labelElement = this.styles(label) + "\r\n" + this.labelComment;				
 	}
 
-	@Override
-	public String addElem(String content) {		
-		return this.replaceContent(content, this.labelComment, this.labelElement);
-	}
-
-	@Override
-	public String deleteElem(String content) {
-		return this.replaceContent(content, this.styles(label), "");
-	}
 
 	@Override
 	public String modElem(String content, ElementAtributes enumAt, String newAtr) {
