@@ -7,6 +7,9 @@ public abstract class Element {
 	private String position;
 	private String color;
 	private String text;
+	protected String labelComment;
+	protected String labelElement; 
+	protected String label;
 	
 	public Element(String position, String color) {
 	//constructor para elementos que no contengan texto como lista
@@ -37,7 +40,9 @@ public abstract class Element {
 			break;
 		case TEXT:
 			this.text = newAtr;			
-			break;							
+			break;
+		case HREF:
+			break;
 		}		
 	};
 	
@@ -52,7 +57,7 @@ public abstract class Element {
 		return this.text;
 	}
 	
-	protected String replaceContent(String content, String replace, String toReplace) {
+	protected String replaceContent(String content, String replace, String toReplace) {		
 		return content.replaceAll(replace,toReplace);
 	}
 	

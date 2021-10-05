@@ -1,16 +1,13 @@
 package ar.com.webpages;
 
-public class Button extends Element{
-	
-	private String labelComment = "<!--b-->";
-	private String labelElement; 
-	private String label = "button";
+public class Button extends Element{			 
 	
 	public Button (String position, String color, String text) {
 		super(position,color, text);				
-				
+		this.labelComment = "<!--b-->";
+		this.label = "button";
+		this.labelElement = this.styles(label) + "\r\n" + this.labelComment;
 		
-		labelElement = this.styles(label) + "\r\n" + this.labelComment;
 	}
 
 	@Override
@@ -23,7 +20,7 @@ public class Button extends Element{
 	@Override
 	public String deleteElem(String content) {	
 		//los comentarios no deberan estar identados para poder borrarlos correctamente 
-		return this.replaceContent(content, this.labelElement, this.labelComment);		
+		return this.replaceContent(content, this.labelElement, "");		
 	}
 	
 	@Override

@@ -68,6 +68,7 @@ public class WebPage {
 	}
 	
 	public void modElement(Element el) {
+		//TODO especificar que es lo que se quiere cambiar para poder enviarlo desde el main
 		this.contenido = el.modElem(this.contenido, ElementAtributes.COLOR, "blue");
 		System.out.println(contenido);
 	}
