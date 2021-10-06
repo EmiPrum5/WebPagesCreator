@@ -34,7 +34,7 @@ public abstract class Element {
 	};
 	public String deleteElem(String content) {
 		//los comentarios no deberan estar identados para poder borrarlos correctamente
-		return this.replaceContent(content, this.styles(label), "");
+		return this.replaceContent(content, this.styles(), "");
 	};
 	public abstract String modElem(String content,ElementAtributes enumAt, String newAtr);
 	
@@ -72,10 +72,10 @@ public abstract class Element {
 		return content.replaceAll(replace,toReplace);
 	}
 	
-	protected String styles (String labelE) {
+	protected String styles () {
 	//refactorizar	
 		StringJoiner st = new StringJoiner("")
-				.add("<" + labelE);		
+				.add("<" + this.label);		
 		
 		if (this.getColor() != "" || this.getPosition() != "") {
 			st.add(" style=\"");
@@ -94,7 +94,7 @@ public abstract class Element {
 		if (this.getText() != "") {
 			st.add(this.getText());
 		}
-		st.add("</" + labelE + ">");			
+		st.add("</" + this.label + ">");			
 				
 		
 		return st.toString();

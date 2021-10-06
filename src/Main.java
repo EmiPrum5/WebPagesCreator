@@ -1,6 +1,7 @@
 import ar.com.webpages.Button;
 import ar.com.webpages.Header;
 import ar.com.webpages.Hyperlink;
+import ar.com.webpages.Image;
 import ar.com.webpages.Paragraph;
 import ar.com.webpages.WebPage;
 
@@ -13,7 +14,7 @@ public class Main {
 		
 		System.out.println(wp.getContent());
 		
-		Button btn = new Button("relative","red", " hola ");
+		/*Button btn = new Button("relative","red", " hola ");
 		wp.addElement(btn);
 		wp.modElement(btn);		
 		
@@ -23,7 +24,7 @@ public class Main {
 		wp.addElement(para);
 		wp.modElement(para);		
 		
-		
+		*/
 		
 		
 		Hyperlink hl = new Hyperlink("relative", "yellow", "soy un hipertexto", "https://www.google.com"); 
@@ -32,17 +33,20 @@ public class Main {
 		
 		wp.modElement(hl);
 		
-		wp.delElement(para);
+		/*wp.delElement(para);
 		
 		wp.delElement(hl);
 		
-		wp.addElement(para);
+		wp.addElement(para);*/			
 		
-		wp.addElement(hl);
-		
-		Header h1 = new Header("relative","brown", "Aca siendo un H1", 1);
+		/*Header h1 = new Header("relative","brown", "Aca siendo un H1", 1);
 	
-		wp.addElement(h1);
+		wp.addElement(h1);*/
+		
+		//Image img = new Image("C:\\Users\\emili\\OneDrive\\Documentos\\Importantes\\CapArcor\\Java\\Proyectos\\WebPagesGenerator\\avcaida.png",
+		//"relative", "left", "300", "300");
+		
+		//wp.addElement(img);
 		
 		wp.writeWebPage("firstwebeichitimiel.html");
 

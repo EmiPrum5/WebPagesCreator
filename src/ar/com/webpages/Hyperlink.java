@@ -9,14 +9,14 @@ public class Hyperlink extends Element{
 		this.labelComment = "<!--b-->";
 		this.reference = reference;
 		this.label = "a";
-		this.labelElement = this.styles(label) + "\r\n" + this.labelComment;
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
 			
 	}
 	
 	@Override
-	protected String styles(String labelE) {
+	protected String styles() {
 		
-		String styEs = super.styles(labelE);
+		String styEs = super.styles();
 		//llamando al metodo de la superclase defino el primer estilo		
 		String styleHyper = styEs.substring(0,2) + " href = \"" + this.reference + "\" " + styEs.substring(3,styEs.length());						
 		
@@ -25,11 +25,11 @@ public class Hyperlink extends Element{
 
 	@Override
 	public String modElem(String content, ElementAtributes enumAt, String newAtr) {
-		String elemNoMod = this.styles(label) + "\r\n" + this.labelComment;		
+		String elemNoMod = this.styles() + "\r\n" + this.labelComment;		
 		
 		this.modifyElem(enumAt, newAtr);
 		//modifico el atributo en el objeto
-		this.labelElement = this.styles(label) + "\r\n" + this.labelComment;
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
 		//retorno los cambios				
 		
 		return this.replaceContent(content, elemNoMod, this.labelElement);
