@@ -9,8 +9,9 @@ import java.util.StringJoiner;
 public class WebPage {
 		
 	private String path = "C:\\Users\\emili\\OneDrive\\Documentos\\Importantes\\CapArcor\\Java\\Proyectos\\WebPagesGenerator\\";
+	//configurar para que sea variable de acuerdo a donde se encuentra el programa
 	private String contenido;
-	private List<String> elementos;
+	private String labelTitle = "<!--t-->";	
 	
 	
 	public WebPage(String nameFile) {
@@ -58,23 +59,19 @@ public class WebPage {
 	public void addElement(Element el) {
 		//voy a trabajar con el contenido del archivo
 		//para no ir abriendolo y cerrando todo el tiempo
-		this.contenido = el.addElem(this.contenido);
-		System.out.println(contenido);
+		this.contenido = el.addElem(this.contenido);		
 	}
 	
 	public void delElement(Element el) {
-		this.contenido = el.deleteElem(this.contenido);
-		System.out.println(contenido);
+		this.contenido = el.deleteElem(this.contenido);		
 	}
 	
 	public void modElement(Element el, ElementAtributes enumAt, String newAtr) {
 		this.contenido = el.modElem(this.contenido, enumAt, newAtr);
-		System.out.println(contenido);
 	}
 	
-	public String getContent() {
-		//solo para probar
-		return this.contenido;
+	public void setTitlePage (String title) {
+		this.contenido = this.contenido.replace(this.labelTitle, title);
 	}
 	
 	public void writeWebPage(String pathFileWrite) {

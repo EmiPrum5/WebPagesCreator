@@ -1,5 +1,7 @@
 package ar.com.webpages;
 
+import java.lang.reflect.Field;
+
 public class Hyperlink extends Element{
 
 	private String reference;
@@ -42,6 +44,12 @@ public class Hyperlink extends Element{
 		} else {
 			super.modifyElem(enumAt, newAtr);
 		}		
+	}
+	
+	public void pruebaCampos() {
+		for (Field f : this.getClass().getFields()) {
+			System.out.println("name:" + f.getName());
+		}	
 	}
 	
 }
