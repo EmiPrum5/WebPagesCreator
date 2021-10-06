@@ -17,8 +17,7 @@ public class WebPage {
 	public WebPage(String nameFile) {
 	//el path va a almacenar el directorio donde se almacene el nuevo archivo
 	//o el directorio donde ya existe en el caso de que se elija modificar
-		this.path = this.path.concat(nameFile);
-		elementos = new ArrayList<String>();
+		this.path = this.path.concat(nameFile);		
 		almacenarContenido();
 	}
 	
