@@ -4,5 +4,9 @@ public enum ElementAtributes {
 	COLOR,
 	POSITION,
 	TEXT,
-	HREF
+	HREF,
+	ALIGN,
+	WIDTH,
+	HEIGHT,
+	SRC
 }

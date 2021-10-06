@@ -9,7 +9,7 @@ public class Image extends Element{
 	private String height;
 	private String src;
 	
-	public Image(String src, String position,String aling,String width,String height) {
+	public Image(String src, String position,String align,String width,String height) {
 		super(position);
 		this.align = "align=\"" + align + "\"";
 		this.width = "width=\"" + width + "\"";
@@ -17,18 +17,26 @@ public class Image extends Element{
 		this.labelComment = "<!--b-->";
 		this.label = "img";
 		this.src = "src=\"" + src + "\"";
-		this.labelElement = "";
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
 	}
 	
-	public Image(String src, String position,String aling) {
+	public Image(String src, String position,String align) {
 		super(position);
 		this.src = src;
-		this.align = "align=\"" + this.align + "\"";				
+		this.align = "align=\"" + this.align + "\"";
+		this.labelComment = "<!--b-->";
+		this.label = "img";
+		this.src = "src=\"" + src + "\"";
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
 	}
 	
 	public Image(String src, String position) {
 		super(position);	
 		this.src = src;
+		this.labelComment = "<!--b-->";
+		this.label = "img";
+		this.src = "src=\"" + src + "\"";
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
 	}
 
 	@Override
@@ -49,8 +57,37 @@ public class Image extends Element{
 
 	@Override
 	public String modElem(String content, ElementAtributes enumAt, String newAtr) {
-		// TODO Auto-generated method stub
-		return null;
+		String elemNoMod = this.styles() + "\r\n" + this.labelComment;		
+		
+		this.modifyElem(enumAt, newAtr);
+		//modifico el atributo en el objeto
+		this.labelElement = this.styles() + "\r\n" + this.labelComment;
+		//retorno los cambios				
+		
+		return this.replaceContent(content, elemNoMod, this.labelElement);
+		
+	}
+	
+	@Override
+	protected void modifyElem(ElementAtributes enumAt, String newAtr) {
+		switch (enumAt) {
+		case ALIGN:
+			this.align = "align=\"" + newAtr + "\"";;
+			break;
+		case WIDTH:
+			this.width = "width=\"" + newAtr + "\"";
+			break;
+		case HEIGHT:
+			this.height = "height=\"" + newAtr + "\"";
+			break;
+		case SRC:
+			this.src = "src=\"" + newAtr + "\"";
+			break;
+		default:
+		//si viene algun atributo que no es de image especifico
+		//voy al de element
+			super.modifyElem(enumAt, newAtr);
+		}
 	}
 
 }

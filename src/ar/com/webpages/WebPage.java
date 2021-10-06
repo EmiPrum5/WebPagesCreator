@@ -67,9 +67,8 @@ public class WebPage {
 		System.out.println(contenido);
 	}
 	
-	public void modElement(Element el) {
-		//TODO especificar que es lo que se quiere cambiar para poder enviarlo desde el main
-		this.contenido = el.modElem(this.contenido, ElementAtributes.COLOR, "blue");
+	public void modElement(Element el, ElementAtributes enumAt, String newAtr) {
+		this.contenido = el.modElem(this.contenido, enumAt, newAtr);
 		System.out.println(contenido);
 	}
 	

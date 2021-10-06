@@ -52,7 +52,9 @@ public abstract class Element {
 		case TEXT:
 			this.text = newAtr;			
 			break;
-		case HREF:
+		default:
+			//si viene algun atributo que no son comunes en todos
+			//no hago nada
 			break;
 		}		
 	};

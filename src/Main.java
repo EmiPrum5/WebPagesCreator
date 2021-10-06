@@ -1,4 +1,5 @@
 import ar.com.webpages.Button;
+import ar.com.webpages.ElementAtributes;
 import ar.com.webpages.Header;
 import ar.com.webpages.Hyperlink;
 import ar.com.webpages.Image;
@@ -31,7 +32,7 @@ public class Main {
 		
 		wp.addElement(hl);
 		
-		wp.modElement(hl);
+		wp.modElement(hl, ElementAtributes.COLOR, "black");
 		
 		/*wp.delElement(para);
 		
@@ -43,10 +44,12 @@ public class Main {
 	
 		wp.addElement(h1);*/
 		
-		//Image img = new Image("C:\\Users\\emili\\OneDrive\\Documentos\\Importantes\\CapArcor\\Java\\Proyectos\\WebPagesGenerator\\avcaida.png",
-		//"relative", "left", "300", "300");
+		Image img = new Image("C:\\\\Users\\\\emili\\\\OneDrive\\\\Documentos\\\\Importantes\\\\CapArcor\\\\Java\\\\Proyectos\\\\WebPagesGenerator\\\\avcaida.png",
+		"relative", "left", "300", "300");
 		
-		//wp.addElement(img);
+		wp.addElement(img);
+		
+		wp.modElement(img, ElementAtributes.HEIGHT,"700");
 		
 		wp.writeWebPage("firstwebeichitimiel.html");
 
